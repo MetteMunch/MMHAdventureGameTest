@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
     //evt atributter og instances
     private String roomName;
@@ -6,6 +8,7 @@ public class Room {
     private Room roomToWest;
     private Room roomToSouth;
     private Room roomToEast;
+    private ArrayList<Item> listOfItemsInRoom;
 
     //Constructor
     public Room(String roomName, String roomDescription){
@@ -15,10 +18,20 @@ public class Room {
         roomToSouth = null;
         roomToEast = null;
         roomToWest = null;
+        listOfItemsInRoom = new ArrayList<Item>();
     }
 
 
     //Metoder getters og setters
+    //Skal have en metode til at tilføje og fjerne items fra Arraylist samt visning af hele listen
+
+    public void addItemToRoom (Item item){
+        listOfItemsInRoom.add(item);
+    }
+
+    public void removeItemFromRoom (Item item){
+        listOfItemsInRoom.remove(item);
+    }
 
 
     public String getRoomName() {
@@ -67,5 +80,9 @@ public class Room {
 
     public void setRoomToEast(Room roomToEast) {
         this.roomToEast = roomToEast;
+    }
+
+    public ArrayList<Item> getListOfItemsInRoom() {
+        return listOfItemsInRoom;
     }
 }

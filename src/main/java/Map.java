@@ -11,10 +11,12 @@ public class Map {
     private Room room9;
 
 
+
     //Constructor//
     public Map() {
         makeGameScene();
         this.currentRoom = room1;
+        createAndPlaceItems();
     }
     public void makeGameScene() {
         room1 = new Room("Room1", "a nice green hill with a marvelous view");
@@ -55,8 +57,23 @@ public class Map {
         room9.setRoomToWest(room8);
 
     }
+    public void createAndPlaceItems (){
+
+            Item itemKnife = new Item("Knife", "a small knife as sharp as a racor blade.");
+            Item itemSword = new Item("Sword", "a great and terrifying sword, but as light as a feather.");
+            Item itemAxe = new Item("Axe", "an axe made by evil forces.");
+            Item itemFirstAidKit = new Item("First Aid Kit", "a kit which can heal all wounds.");
+
+            room3.addItemToRoom(itemKnife);
+            room3.addItemToRoom(itemSword);
+            room3.addItemToRoom(itemAxe);
+            room7.addItemToRoom(itemFirstAidKit);
+
+    }
 
     public Room getCurrentRoom() {
         return currentRoom;
     }
+
+
 }
