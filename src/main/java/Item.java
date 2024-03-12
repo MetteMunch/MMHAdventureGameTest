@@ -21,6 +21,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return +itemName + "\n" +itemDescription;
+        return itemName + "\n" +itemDescription;
     }
 }
